@@ -1,4 +1,4 @@
-# ☀️ SolarMap
+# SolarMap
 
 **Estimación del potencial solar de tejados combinando imágenes aéreas, deep learning y datos climáticos.**
 
@@ -10,7 +10,7 @@ Proyecto universitario desarrollado en equipo (5 personas) en el Grado en Ingeni
 
 ---
 
-## 🔍 Cómo funciona
+## Cómo funciona
 
 ```
 Dirección ─► Geocodificación ─► Imagen aérea ─► U-Net (segmentación de tejados)
@@ -23,7 +23,7 @@ Dirección ─► Geocodificación ─► Imagen aérea ─► U-Net (segmentaci
                      MySQL ─► API (FastAPI) ─► Web (React) + dashboards Power BI
 ```
 
-## 🧠 Modelo de detección de tejados (U-Net)
+## Modelo de detección de tejados (U-Net)
 
 | | |
 |---|---|
@@ -41,7 +41,7 @@ Dirección ─► Geocodificación ─► Imagen aérea ─► U-Net (segmentaci
 
 El modelo se sirve mediante una API REST (FastAPI, endpoint `/detect-roofs`). La web la llama para detectar los tejados de la dirección introducida y guardarlos en la base de datos.
 
-## 🛠️ Tecnologías
+## Tecnologías
 
 - **IA / datos:** Python · PyTorch · NumPy · Pandas · OpenCV · Jupyter
 - **Datos externos:** Copernicus / ERA5 (clima) · ortofotos aéreas
@@ -50,7 +50,7 @@ El modelo se sirve mediante una API REST (FastAPI, endpoint `/detect-roofs`). La
 - **BI:** Power BI (dashboards integrados en la web)
 - **Despliegue:** Docker · Docker Compose · Nginx
 
-## 📁 Estructura
+## Estructura
 
 ```
 src/
@@ -66,7 +66,7 @@ frontend/                      # Aplicación web (React + TypeScript)
 docker/ · docker-compose.yml   # Contenedores de todos los servicios
 ```
 
-## 🚀 Ejecución
+## Ejecución
 
 **Con Docker (todos los servicios):**
 
@@ -85,7 +85,7 @@ cd frontend/solarmapuem-main && npm install
 
 Después, ejecutar `arrancar_solarmap.bat` desde la raíz del proyecto.
 
-## 👩‍💻 Mi aportación
+## Mi aportación
 
 Fui la responsable del **modelo de detección de tejados**, de principio a fin:
 
@@ -94,6 +94,6 @@ Fui la responsable del **modelo de detección de tejados**, de principio a fin:
 - Postprocesado de las predicciones a polígonos GeoJSON con superficie y orientación de cada tejado.
 - **Integración del modelo en la web:** API de inferencia, guardado de los tejados detectados en la base de datos y despliegue con Docker.
 
-## 👥 Equipo
+## Equipo
 
 Proyecto desarrollado junto a Sergio Gama, Eva Nieto, Javier Mohíno y Guillermo Angulo.
