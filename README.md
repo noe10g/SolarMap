@@ -6,8 +6,6 @@ SolarMap permite introducir una dirección, detecta automáticamente los tejados
 
 Proyecto universitario desarrollado en equipo (5 personas) en el Grado en Ingeniería Matemática Aplicada al Análisis de Datos (UEM), asignaturas de Big Data.
 
-![Interfaz de SolarMap](Ideaci%C3%B3n/interfaz.png)
-
 ---
 
 ## Cómo funciona
