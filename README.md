@@ -6,6 +6,8 @@ SolarMap permite introducir una dirección, detecta automáticamente los tejados
 
 Proyecto universitario desarrollado en equipo (5 personas) en el Grado en Ingeniería Matemática Aplicada al Análisis de Datos (UEM), asignaturas de Big Data.
 
+![Portada de SolarMap](docs/img/portada.png)
+
 ---
 
 ## Cómo funciona
@@ -31,6 +33,10 @@ Dirección ─► Geocodificación ─► Imagen aérea ─► U-Net (segmentaci
 | Entrenamiento | 30 épocas · Adam (lr = 1e-3) · `BCEWithLogitsLoss` con `pos_weight` para compensar el desbalance de clases · guardado del mejor modelo según la pérdida de validación |
 | Postprocesado | Umbral ajustado mediante un análisis de thresholds · OpenCV para extraer contornos, filtrar ruido y convertir las máscaras en polígonos GeoJSON con área real (m²) y orientación |
 
+![Tejados detectados por el modelo sobre la ortofoto](docs/img/deteccion_tejados.png)
+
+*Tejados detectados automáticamente por la U-Net en la zona seleccionada.*
+
 **Resultados en el conjunto de test**
 
 | IoU | Dice | Accuracy | Precision | Recall |
@@ -38,6 +44,12 @@ Dirección ─► Geocodificación ─► Imagen aérea ─► U-Net (segmentaci
 | 0,67 | 0,80 | 93 % | 78 % | 82 % |
 
 El modelo se sirve mediante una API REST (FastAPI, endpoint `/detect-roofs`). La web la llama para detectar los tejados de la dirección introducida y guardarlos en la base de datos.
+
+### Análisis de rentabilidad
+
+Para cada tejado seleccionado, la aplicación estima la producción anual, la inversión, el ahorro, el tiempo de amortización y la evolución del precio de la luz según distintos escenarios.
+
+![Análisis de un tejado](docs/img/analisis.png)
 
 ## Tecnologías
 
